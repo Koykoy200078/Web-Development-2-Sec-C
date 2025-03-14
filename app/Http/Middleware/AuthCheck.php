@@ -19,6 +19,7 @@ class AuthCheck
         if (!Session::has('loginId')) {
             return redirect()->route('auth.index')->with('error', 'You must be logged in.');
         }
+
         return $next($request);
     }
 }
